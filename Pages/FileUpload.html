@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+
+  <title>Metropolitan Richmond Artists Association</title>
+</head>
+<body>
+  <div class="container">
+  <h1>Submissions</h1>
+
+  <form>
+
+
+    <label for="imageFile">Upload Image *</label>
+    <div class="form-group mb-3">
+      <input type="file" id="imageFile">
+      <input type="button" value="Upload" onclick="saveAll(document.getElementById('imageFile'))" id="btnSave">
+    </div>
+
+
+
+    <div>
+<!--       <button type="submit" class="btn btn-primary" id="btnSaveQuit">
+        Save and Quit
+      </button>
+
+      <button type="button" class="btn btn-secondary" id="btnQuit">
+        Quit
+      </button> -->
+    </div>
+  </form>
+
+  <div id="progress"></div>
+</div>
+
+<?!= include("script.inc"); ?>
+</body>
+</html>
