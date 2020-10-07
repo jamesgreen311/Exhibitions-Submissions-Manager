@@ -1,4 +1,4 @@
-const ds = SpreadsheetApp.getActiveSpreadsheet();
+//const ds = SpreadsheetApp.getActiveSpreadsheet();
 //const ws = ds.getActiveSheet();
 const ws = ds.getSheetByName("Test");
 

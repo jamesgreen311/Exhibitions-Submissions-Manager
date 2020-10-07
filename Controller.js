@@ -9,9 +9,10 @@ Route.path = function(r, callback) {
   Route[r] = callback;
 }
 
-function saveFile(f,d) {
+function saveFile(f,d,imgfolder,sheet) {
     let blob = Utilities.newBlob(f.bytes, f.mimeType, f.filename);
-    let uploadFolder = DriveApp.getFolderById(imageFolderId)
+    let targetFolderId = imgfolder == undefined?imageFolderId:imgfolder;
+    let uploadFolder = DriveApp.getFolderById(targetFolderId);
     let today = new Date();
 
     let newFile = DriveApp.createFile(blob).moveTo(uploadFolder).getId();
@@ -20,14 +21,14 @@ function saveFile(f,d) {
     d.push(""); // placeholder for hidden
     d.push(today.toString());
     
-    let done = saveToSheet(d);
+    let done = saveToSheet(d,sheet);
     Logger.log("Uploaded image id = %s",newFile)
     return done;
 }
 
-function saveToSheet(data) {
+function saveToSheet(data,sheet) {
     let ss = SpreadsheetApp.getActiveSpreadsheet();
-    let ws = ss.getSheetByName(exhibitSheetName);
+    let ws = ss.getSheetByName(sheet);
 
     ws.appendRow(data);
     Logger.log(data);

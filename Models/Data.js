@@ -6,10 +6,9 @@
 */
 
 // Map form to database
-const mapFormToCell = {
+const Data = {
     firstName: "a:a",
-    lastName: "b:b",
-
+    lastName: "b:b"
 }
 
 const sheetHeaders = [
