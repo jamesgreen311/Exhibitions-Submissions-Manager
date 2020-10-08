@@ -18,6 +18,7 @@ function doGet(e) {
     r = Route[e.parameter.v]();
   } else {
     // default to main page
+    exhibitName = "";
     r = render(pageName);
   }
 
